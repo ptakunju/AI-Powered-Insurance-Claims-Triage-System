@@ -8,6 +8,8 @@ This solution is tailored to address the need for scalable claim triage by lever
 - Retrieval-Augmented Generation (RAG) pipelines
 - Explainable AI tools (LIME/SHAP)
 - A DevOps-ready infrastructure for CI/CD and monitoring
+- Streamlit based front end for users
+  
 The goal is to produce a real-time, transparent, and scalable classification engine that categorizes insurance claims into Low, Medium, or High severity/risk.
 
 ## Approach
