@@ -41,11 +41,5 @@ The Streamlit frontend was simultaneously developed to serve as the user-facing 
 - **Accuracy**: ~99% (note: inflated due to synthetic training set, see docs)
 - **Data Size**: 21,684 claims
 
-
-## 📄 Key Reports
-
-- [`Frontend Development Report`](./docs/Frontend_Development_Report.pdf) – UI architecture, page breakdown, workflow
-- [`Phase 1 LLM Claims Report`](./docs/MS1_LLM_Triage_Report.pdf) – Dataset prep, model training, performance evaluation
-
 ---
 
