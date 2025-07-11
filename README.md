@@ -1,6 +1,6 @@
 # AI-Powered-Insurance-Claims-Triage-System
 
-This project aims to automate the risk triage process for insurance claims using a combination of Large Language Models (LLMs), metadata analysis, and explainable AI. Traditional manual claim triaging is labor-intensive and prone to human bias. By introducing a structured, AI-powered solution, we target faster and more accurate claim classification.
+This project aims to automate the risk triage process for insurance claims using a combination of Large Language Models (LLMs), metadata analysis, and explainable AI. Traditional manual claim triaging is labor-intensive and prone to human bias. By introducing a structured, AI-powered solution, I target faster and more accurate claim classification.
 
 #### Background and Goals
 This solution is tailored to address the need for scalable claim triage by leveraging:
@@ -60,7 +60,7 @@ The dataset contains **21,691** worker compensation claims with structured metad
 
 ### 📈 Correlation Analysis
 
-To understand the relationships among structured numerical features, we generated a **correlation heatmap**.
+To understand the relationships among structured numerical features, I generated a **correlation heatmap**.
 
 ![Correlation Heatmap](./figures/heatmap.png)
 
