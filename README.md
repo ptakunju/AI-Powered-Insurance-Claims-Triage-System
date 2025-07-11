@@ -82,7 +82,7 @@ To understand the relationships among structured numerical features, I generated
 > This justifies the need for **richer natural language inputs** and **advanced models** that can capture complex, non-linear patterns in claims data.
 
 ### 🧠 Label Generation: `SeverityLabel`  
-To train the model, we created a target label called `SeverityLabel` by splitting the `Incurred` column (final cost) into **three quantiles**:
+To train the model, a target label was created, called `SeverityLabel` by splitting the `Incurred` column (final cost) into **three quantiles**:
 - **Low**: Bottom third of incurred cost
 - **Medium**: Middle third  
 - **High**: Top third  
@@ -99,7 +99,7 @@ Example:
 **Transformed:** `"I was struck by scaffolding and strained my lower back."` → `DetailedClaimDescription`
 
 #### 2. **InputText Construction**  
-We combined multiple structured fields and the rephrased descriptions into a comprehensive natural language input for RoBERTa.
+Multiple structured fields were combined and the rephrased descriptions into a comprehensive natural language input for RoBERTa.
 
 Example:  
 ```text
@@ -139,7 +139,7 @@ This boosted classification accuracy by making severity cues explicit.
 
 ### 🧪 Free-Text Testing
 
-To check generalization, we tested RoBERTa on new, unseen natural sentences:
+To check generalization, RoBERTa was tested on new, unseen natural sentences:
 
 | Custom Input                                                       | Prediction |
 |--------------------------------------------------------------------|------------|
