@@ -17,11 +17,11 @@ The project is being implemented using a phase-wise development strategy, allowi
 
 ## Phase-Wise Development Plan
 
-### 🔹 Phase 1 – Core Model Development [Jump to Phase 1](#phase-1-core-model-development)  
+### 🔹 Phase 1 – Core Model Development [Jump to Phase 1](#phase-1--core-model-development-claim-severity-classification)  
 - Build the core LLM-based classifier using a fine-tuned transformer model like RoBERTa, focused on predicting claim severity based on structured data and claim description.
 - Build Streamlit pages for user login, claim upload (single and batch), and management; display model-predicted claim severity using the integrated RoBERTa-based classifier.
 
-### 🔹 Phase 2 – Explainability Integration (LIME/SHAP) [Jump to Phase 2](#phase-2-explainability--context-integration)
+### 🔹 Phase 2 – Explainability Integration ([Jump to Phase 2](#phase-2-explainability--context-integration)
 - Incorporate explainable AI tools to interpret the model’s decisions, offering transparency to reviewers and ensuring regulatory compliance.
 - Implement the Explanation page to visualize SHAP and LIME outputs for each prediction, and integrate database connectivity for storing and retrieving user data, claims, predictions, and explanation metadata.
 
@@ -212,7 +212,7 @@ This is achieved through **SHAP** (SHapley Additive exPlanations) and **LIME** (
 
 ---
 
-## 🔍 Phase 2: Explainability & Context Integration
+## Phase 2: Explainability & Context Integration
 
 ### 🧠 AI/ML Progress
 
