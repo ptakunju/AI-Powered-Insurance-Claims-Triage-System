@@ -212,3 +212,81 @@ This is achieved through **SHAP** (SHapley Additive exPlanations) and **LIME** (
 
 ---
 
+## 🔍 Phase 2: Explainability & Context Integration
+
+### 🧠 AI/ML Progress
+
+#### LLM Prediction API (`/predict`)
+- Fine-tuned **RoBERTa** serves as the core triage engine
+- Accepts enriched claim narratives (`InputText`)
+- Returns:
+  - Predicted Severity: `Low`, `Medium`, or `High`
+  - Confidence Score
+
+![LLM_API_Output](./figures/LLM_Output.jpg)
+
+#### SHAP & LIME Explanation API (`/explanation/{claim_id}`)
+- Both SHAP and LIME implemented for interpretability
+- **SHAP** chosen as default due to:
+  - Determinism
+  - Semantic token importance
+  - Transformer-native support
+- Outputs token-level importance highlighting key decision drivers like `fracture`, `bleeding`, etc.
+
+
+##### 🔬 SHAP vs LIME: Comparison Table
+
+| Aspect             | LIME                                                                 | SHAP                                                          |
+|--------------------|----------------------------------------------------------------------|----------------------------------------------------------------|
+| **Methodology**     | Perturbation-based; fits a local surrogate model                    | Game theory (Shapley values)                                   |
+| **Consistency**     | Varies across runs due to randomness                                | Deterministic (same input yields same output)                  |
+| **Speed**           | Slower, especially on long texts                                    | Faster for transformer models                                  |
+| **Token Importance**| Sometimes highlights irrelevant tokens                              | Focuses on semantically meaningful tokens                      |
+| **Integration**     | Requires manual pipeline adjustment for tokenization                | Natively supports HuggingFace transformers                     |
+
+- SHAP consistently highlighted meaningful keywords such as “fracture,” “stabbed,” and “bleeding.”
+- SHAP was made the default explanation engine while LIME remains available for exploration.
+
+![SHAP_LIME_Processing_Time](./figures/SHAP_LIME_Processing_Time.jpg)
+
+#### Retrieval-Augmented Generation (RAG)
+- Embeds policy documents using **MiniLM-L6-v2**
+- Indexed with **FAISS**
+- Returns top-k policy chunks that support the claim decision
+- Enables **grounded AI reasoning**, promoting compliance and trust
+
+
+![RAG_Output](./figures/RAG_Output.png)
+
+---
+
+### 💻 UI Integration & Backend Infrastructure
+
+#### FastAPI Backend + PostgreSQL
+- All APIs served via **FastAPI**
+
+![FastAPI_backend](./figures/FastAPI_backend.jpg)
+
+- Backend securely connected to a multi-user **PostgreSQL** database
+
+![Logs_PostgreSQL](./figures/Logs_PostgreSQL.jpg)
+
+- OAuth2-based login system ensures access control
+- Predictions and explanations stored with associated user IDs
+
+
+#### Streamlit Frontend
+- Fully integrated with backend services
+- Functional prediction flow:
+  1. Submit claim → `/predict` triggered
+
+![LLM_API_output](./figures/LLM_API_output.jpg)
+
+  2. Prediction + confidence shown
+  3. Data logged in DB
+
+- Interface enhanced for Phase 3 compatibility:
+  - SHAP visual integration
+  - RAG chunk display area
+
+---
