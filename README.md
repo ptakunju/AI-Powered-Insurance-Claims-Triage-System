@@ -25,14 +25,19 @@ The project is being implemented using a phase-wise development strategy, allowi
 - Incorporate explainable AI tools to interpret the model’s decisions, offering transparency to reviewers and ensuring regulatory compliance.
 - Implement the Explanation page to visualize SHAP and LIME outputs for each prediction, and integrate database connectivity for storing and retrieving user data, claims, predictions, and explanation metadata.
 
-### 🔹 Phase 3 – RAG Pipeline Integration
+### 🔹 Phase 3 – RAG Pipeline Integration [➡️](#phase-3--shap--lime-integration--api-optimization--ui-visualization)
 - Implement Retrieval-Augmented Generation using policy documents. This grounds model decisions in source documentation for traceability and improved performance.
 - Enhance the Explanation page to include retrieved policy document excerpts and rationale generated via the RAG pipeline, providing context and traceability behind AI decisions.
 
 ### 🔹 Phase 4 – MLOps and DevOps Pipelines
 - Integrate model retraining, monitoring, version control (GitHub), and automated deployment mechanisms using tools like MLflow, Docker, and CI/CD pipelines.
 
+<br>
+
 ---
+
+<br>
+
 
 ## Phase 1 – Core Model Development: Claim Severity Classification
 
@@ -210,7 +215,16 @@ This is achieved through **SHAP** (SHapley Additive exPlanations) and **LIME** (
 | Management Page  | Browse uploaded claims and their predicted severities (paginated view)      |
 | EDA Dashboard    | Visual insights into claim patterns by age, gender, employment type, etc.   |
 
+
+<br>
+
+
+<br>
+
 ---
+
+<br>
+
 
 ## Phase 2: Explainability & Context Integration
 
@@ -258,7 +272,12 @@ This is achieved through **SHAP** (SHapley Additive exPlanations) and **LIME** (
 
 ![RAG_Output](./figures/RAG_Output.png)
 
+<br>
+
 ---
+
+<br>
+
 
 ### 💻 UI Integration & Backend Infrastructure
 
@@ -289,4 +308,59 @@ This is achieved through **SHAP** (SHapley Additive exPlanations) and **LIME** (
   - SHAP visual integration
   - RAG chunk display area
 
+<br>
+
 ---
+
+<br>
+
+
+## Phase 3 – SHAP & LIME Integration | API Optimization | UI Visualization
+
+### 🔍 Focus
+Week 3 emphasized full-stack integration of model interpretability features using SHAP and LIME. This enhanced the explainability and transparency of the claims triage system for end-users.
+
+### 🧠 AI/ML Backend Updates
+
+- Optimized **SHAP** and **LIME** explanation APIs for seamless frontend integration  
+- Introduced lightweight response formatting for efficient UI rendering  
+- Reduced payload sizes and improved token-level explanation alignment  
+- Implemented caching mechanisms for faster retrieval of explanation results  
+- Improved error handling for unsupported claims, missing inputs, and version mismatches  
+- Ensured consistent performance across SHAP, LIME, and RAG outputs  
+
+**📊 Figure 1 – SHAP Integration with Frontend**  
+
+![Figure 1 - SHAP Integration](./figures/SHAP_integration.jpg)
+
+**📊 Figure 2 – LIME Output in UI Context**
+
+![Figure 2 - LIME Integration](figures\LIME_Integration.jpg)
+
+### 🎨 Frontend (Streamlit UI) Enhancements
+
+- Integrated SHAP & LIME outputs into the **AI Explanation Page**  
+- Visualized feature importance through **bar plots** and **token-level highlights**  
+- Displayed retrieved policy clauses from the RAG pipeline alongside model confidence  
+- Developed overlay views for complete decision traceability  
+- Added robust fallback handling for API latency or missing explanation data  
+
+**🖥️ Figure 3 – AI Explanation Page with SHAP, LIME & RAG Context**
+
+![Figure 3 - AI Explanation Page](figures\AI_Explanation_Page.jpg)
+
+### 🔧 Coming Next – Week 4: MLOps & DevOps Initiatives
+
+Planned enhancements include:
+
+#### MLOps
+- Real-time model drift monitoring  
+- Scheduled automated retraining  
+- Model and dataset version control  
+- ML experiment tracking with MLflow  
+
+#### DevOps
+- CI/CD pipeline setup via GitHub Actions  
+- Secure containerized deployment (FastAPI + Streamlit)  
+- Regular backups of models, datasets, and logs  
+- Docker Compose orchestration with future Kubernetes support  
