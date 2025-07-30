@@ -318,10 +318,11 @@ This is achieved through **SHAP** (SHapley Additive exPlanations) and **LIME** (
 ## Phase 3 – SHAP & LIME Integration | API Optimization | UI Visualization
 
 ### 🔍 Focus
-Week 3 emphasized full-stack integration of model interpretability features using SHAP and LIME. This enhanced the explainability and transparency of the claims triage system for end-users.
+Week 3 emphasized full-stack integration of model interpretability features using **SHAP**, **LIME**, and **RAG**. This enhanced the explainability and contextual reliability of the claims triage system for end-users.
 
 ### 🧠 AI/ML Backend Updates
 
+- Developed RAG (Retrieval-Augmented Generation) API to fetch relevant policy document chunks for each submitted claim
 - Optimized **SHAP** and **LIME** explanation APIs for seamless frontend integration  
 - Introduced lightweight response formatting for efficient UI rendering  
 - Reduced payload sizes and improved token-level explanation alignment  
@@ -340,6 +341,7 @@ Week 3 emphasized full-stack integration of model interpretability features usin
 ### 🎨 Frontend (Streamlit UI) Enhancements
 
 - Integrated SHAP & LIME outputs into the **AI Explanation Page**  
+- Integrated RAG output to display retrieved policy clauses next to model predictions
 - Visualized feature importance through **bar plots** and **token-level highlights**  
 - Displayed retrieved policy clauses from the RAG pipeline alongside model confidence  
 - Developed overlay views for complete decision traceability  
