@@ -335,7 +335,7 @@ Week 3 emphasized full-stack integration of model interpretability features usin
 
 **📊 Figure 2 – LIME Output in UI Context**
 
-![Figure 2 - LIME Integration](figures\LIME_Integration.jpg)
+![Figure 2 - LIME Integration](./figures/LIME_Integration.jpg)
 
 ### 🎨 Frontend (Streamlit UI) Enhancements
 
@@ -347,7 +347,7 @@ Week 3 emphasized full-stack integration of model interpretability features usin
 
 **🖥️ Figure 3 – AI Explanation Page with SHAP, LIME & RAG Context**
 
-![Figure 3 - AI Explanation Page](figures\AI_Explanation_Page.jpg)
+![Figure 3 - AI Explanation Page](./figures/AI_Explanation_Page.jpg)
 
 ### 🔧 Coming Next – Week 4: MLOps & DevOps Initiatives
 
