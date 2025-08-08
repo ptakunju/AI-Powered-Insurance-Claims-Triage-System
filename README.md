@@ -29,7 +29,7 @@ The project is being implemented using a phase-wise development strategy, allowi
 - Implement Retrieval-Augmented Generation using policy documents. This grounds model decisions in source documentation for traceability and improved performance.
 - Enhance the Explanation page to include retrieved policy document excerpts and rationale generated via the RAG pipeline, providing context and traceability behind AI decisions.
 
-### 🔹 Phase 4 – MLOps and DevOps Pipelines
+### 🔹 Phase 4 – MLOps and DevOps Pipelines [➡️](#phase-4-highlights-devops-mlops-and-user-management-finalization) 
 - Integrate model retraining, monitoring, version control (GitHub), and automated deployment mechanisms using tools like MLflow, Docker, and CI/CD pipelines.
 
 <br>
@@ -366,3 +366,129 @@ Planned enhancements include:
 - Secure containerized deployment (FastAPI + Streamlit)  
 - Regular backups of models, datasets, and logs  
 - Docker Compose orchestration with future Kubernetes support  
+
+
+
+<br>
+
+---
+
+<br>
+
+## Phase 4 Highlights: DevOps, MLOps, and User Management Finalization
+
+This week marked the final major development sprint of the AI-powered Insurance Claim Triage System. We focused on improving infrastructure transparency, user autonomy, and system maintainability by introducing **real-time DevOps monitoring**, **MLOps enhancements**, and a robust **user management interface**.
+
+
+### 🖥️ DevOps Monitoring Dashboard
+
+A full-fledged, real-time system monitoring interface was developed for operational visibility of the containerized backend:
+
+- **17 containers monitored**: covering frontend (Streamlit), backend APIs (FastAPI), PostgreSQL DB, Redis cache, and monitoring tools.
+
+![Figure 1 - DevOps Containers](./figures/docker-containers.png)
+
+![Figure 2 - DevOps Images](./figures/docker-images.png)
+
+- **Network topology**: Visualizes Docker bridge and custom networks (e.g., 172.18.0.0/16).
+
+![Figure 3 - DevOps Networks](./figures/docker-networks.png)
+
+- **Resource metrics**: Tracks 12-core CPU, 7.65 GB memory, 10.87 GB Docker image storage, and 18 persistent volumes.
+
+![Figure 4 - DevOps Volumes](./figures/docker-volumes.png)
+
+![Figure 5 - DevOps System Info](./figures/docker-system-info.png)
+
+- **Live status indicators**: With drill-down capabilities for performance troubleshooting.
+
+![Figure 6 - DevOps Resource Summary](./figures/docker-resource-summary.png)
+
+
+### 🔁 MLOps Monitoring & Automation
+
+To ensure model lifecycle stability and reproducibility, MLOps capabilities were extended:
+
+
+- **Retraining Hooks**: Backend now supports modular endpoints for manual or scheduled retraining integration (future-proofing continuous learning).
+
+![Figure 1 - MLOps Training Jobs](./figures/mlops-training-jobs.png)
+
+- **Model Registry Integration**: Enables version control and tracking of deployed models (e.g., Claims Classifier v2.0).
+
+![Figure 2 - MLOps Model Versions](./figures/mlops-model-versions.png)
+
+- **Dataset Upload Panel:** Enables users to upload training data in CSV or JSON format (up to 200MB) with fields for dataset name, description, and data type selection for organized ML pipeline integration.
+
+
+![Figure 3 - MLOps Upload DataSets](./figures/mlops-upload-dataset.png)
+
+![Figure 4 - MLOps Available DataSets](./figures/mlops-available-datasets.png)
+
+
+- **ML Model Training Interface**: This unified dashboard allows users to monitor active models, track training jobs, and view real-time performance metrics such as average accuracy and total datasets processed. 
+
+![Figure 5 - MLOps Start Training](./figures/mlops-start-training.png)
+
+- **Training Hyperparameter Panel:** Provides advanced control over model training with configurable fields for evaluation strategy, batch sizes, learning rate, epochs, and data splits.
+
+
+![Figure 6 - MLOps Start Training Hyperparameters](./figures/mlops-start-training-hyperparameters.png)
+
+
+
+### 👤 User Settings & Account Management
+
+A self-service user management system empowers users to control their profiles, preferences, and data:
+
+- **Editable profile info** with secure update endpoints.
+
+![Figure 1 - User Profile Settings](./figures/settings-profile.png)
+
+- **AI Model Selector** lets users choose preferred model for claim classification.
+
+![Figure 2 - User Model Settings](./figures/settings-model-config.png)
+
+
+- **Password and Session Management** using tokenized security with strength validation.
+
+![Figure 3 - User Account Security](./figures/settings-account-security.png)
+
+- **CSV/XLSX Export** of claim data with filter and field selection support.
+
+![Figure 4 - User Settings Export Data](./figures/settings-data-export.png)
+
+
+
+
+### ⚙️ Architecture and Scaling
+
+- **4 active containers** at any given time ensure optimal resource usage.
+- **On-demand scaling** ready via Docker restart policies and load-based container activation.
+- **Monitoring & Settings UI** developed using responsive, tabbed layouts and secure API integrations.
+
+### 📌 Project Completion Summary
+
+Over the past four weeks, the AI Insurance Claim Triage System has evolved into a production-ready solution integrating:
+
+1. **AI/ML Claim Classification Pipeline** (via RoBERTa-based models)  
+2. **Explainability Layers** (SHAP + LIME visualizations)  
+3. **RAG-based Policy Integration**  
+4. **Streamlit UI with Role-Based Access**  
+5. **FastAPI Microservices Backend**  
+6. **DevOps Monitoring Dashboard**  
+7. **User Profile and Security Settings**  
+8. **MLOps Hooks and Logging for AI Models**
+
+<br>
+
+---
+
+<br>
+
+## ✅ Final Note
+
+This week’s enhancements conclude the development cycle. With robust monitoring, secure user handling, and scalable architecture in place, the system is ready for staged deployment and further real-world testing.
+
+
+
